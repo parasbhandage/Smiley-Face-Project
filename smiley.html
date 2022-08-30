@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smiley</title>
+    <!-- <link rel="stylesheet" href="smiley.css"> -->
+<!-- <style>
+    canvas{
+        background-color: antiquewhite;
+    }
+</style> -->
+</head>
+
+<body>
+        <canvas id="canvas" width="500" height="500">
+    </canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+
+        ctx.beginPath();
+        // arc(x,y,r,sAngle,eAngle,counterclockwise);
+        ctx.arc(250, 250, 200, 0, Math.PI * 2, true); // Outer circle
+        ctx.fillStyle = "antiquewhite";
+        ctx.fill();
+        
+
+        ctx.moveTo(190, 200);
+        ctx.arc(150, 200, 40, 0, Math.PI * 2, true); // Left eye
+
+        ctx.moveTo(390 , 200);
+        ctx.arc(350, 200, 40, 0, Math.PI * 2, true); // Right eye
+
+        ctx.moveTo(306, 350);
+        ctx.arc(250, 350, 55, 0, Math.PI, false); // Mouth (clockwise)
+
+        ctx.moveTo(250, 250);
+        ctx.arc(250, 300, 0, 0, Math.PI, false); // Mouth (clockwise)
+       
+
+        ctx.stroke();
+    </script>
+</body>
+
+</html>
